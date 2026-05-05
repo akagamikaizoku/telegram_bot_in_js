@@ -1,0 +1,26 @@
+{
+  "name": "telegram-gacha-bot",
+  "version": "1.0.0",
+  "description": "A scalable Telegram gacha character bot with MongoDB, risk-based pulls, and admin controls",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "gacha",
+    "gaming"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^4.12.2",
+    "dotenv": "^16.3.1",
+    "mongoose": "^7.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
