@@ -139,61 +139,58 @@ bot.action('action_inventory', async (ctx) => {
 bot.action('action_help', (ctx) => {
   ctx.answerCbQuery();
   const message = 
-    `📚 **GACHA BOT COMMANDS**\n\n` +
-    `🎮 **User**\n` +
-    `/pull - Pull a character (10 coins)\n` +
-    `/inventory - View your collection\n` +
-    `/start - Back to home\n\n` +
-    `👑 **Admin**\n` +
-    `/addchar - Add character\n` +
-    `/listchar - List all\n` +
-    `/give - Give coins\n` +
-    `/ban - Ban user\n\n` +
-    `ℹ️ **Rates**\n` +
-    `⚪ Common: 60%\n` +
-    `🔵 Rare: 25%\n` +
-    `🟣 Epic: 10%\n` +
-    `🟡 Legendary: 5%\n\n` +
-    `🎴 Claim: 80% success`;
+    `╭────── ˹ ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs ˼ ★\n` +
+    `┊ 🎮 **ᴜsᴇʀ ᴄᴏᴍᴍᴀɴᴅs**\n` +
+    `┆ /pull - ᴘᴜʟʟ ᴀ ᴄʜᴀʀᴀᴄᴛᴇʀ\n` +
+    `┆ /inventory - ᴠɪᴇᴡ ᴄᴏʟʟᴇᴄᴛɪᴏɴ\n` +
+    `┆ /start - ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ\n` +
+    `┊ 👑 **ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs**\n` +
+    `┆ /addchar - ᴀᴅᴅ ᴄʜᴀʀᴀᴄᴛᴇʀ\n` +
+    `┆ /listchar - ʟɪsᴛ ᴀʟʟ\n` +
+    `┆ /give - ɢɪᴠᴇ ᴄᴏɪɴs\n` +
+    `┆ /ban - ʙᴀɴ ᴜsᴇʀ\n` +
+    `┴─────────────────────────•\n` +
+    `ℹ️ **ʀᴀᴛᴇs**\n` +
+    `⚪ ᴄᴏᴍᴍᴏɴ: 60%\n` +
+    `🔵 ʀᴀʀᴇ: 25%\n` +
+    `🟣 ᴇᴘɪᴄ: 10%\n` +
+    `🟡 ʟᴇɢᴇɴᴅᴀʀʏ: 5%`;
 
-  ctx.reply(message, {
+  ctx.editMessageText(message, {
     parse_mode: 'Markdown',
     reply_markup: {
       inline_keyboard: [
-        [{ text: '🏠 Back Home', callback_data: 'action_home' }]
+        [{ text: '🏠 ʙᴀᴄᴋ ʜᴏᴍᴇ', callback_data: 'action_home' }]
       ]
     }
-  });
+  }).catch(() => {});
 });
 
 bot.action('action_info', (ctx) => {
   ctx.answerCbQuery();
   const message = 
-    `ℹ️ **BOT INFORMATION**\n\n` +
-    `🎯 **Goal**\n` +
-    `Collect your favorite waifus and characters!\n\n` +
-    `💰 **Economy**\n` +
-    `Start with: 100 coins\n` +
-    `Pull cost: 10 coins\n` +
-    `Max pulls: 10 pulls\n\n` +
-    `🎲 **Mechanics**\n` +
-    `Pull & Claim: 80% success\n` +
-    `Cooldown: 60 seconds\n` +
-    `Claim window: 60 seconds\n\n` +
-    `🔧 **Features**\n` +
-    `✅ Character collection\n` +
-    `✅ Image support\n` +
-    `✅ Admin controls\n` +
-    `✅ Ban system`;
+    `╭────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼ ★\n` +
+    `┊◍ **ғᴇᴀᴛᴜʀᴇs**\n` +
+    `┆ ❖ ᴄᴏʟʟᴇᴄᴛ ᴄʜᴀʀᴀᴄᴛᴇʀs\n` +
+    `┆ ❖ ʙɪɢ ᴀɴɪᴍᴇ ʜᴀʀᴇᴍ\n` +
+    `┆ ❖ ᴛʀᴀᴅᴇ ᴡɪᴛʜ ғʀɪᴇɴᴅs\n` +
+    `┴─────────────────────────•\n\n` +
+    `💰 **ᴇᴄᴏɴᴏᴍʏ**\n` +
+    `sᴛᴀʀᴛ ᴄᴏɪɴs: 100\n` +
+    `ᴘᴜʟʟ ᴄᴏsᴛ: 10 ᴄᴏɪɴs\n\n` +
+    `🎲 **ᴍᴇᴄʜᴀɴɪᴄs**\n` +
+    `ᴄʟᴀɪᴍ sᴜᴄᴄᴇss: 80%\n` +
+    `ᴄᴏᴏʟᴅᴏᴡɴ: 60s\n` +
+    `ᴄʟᴀɪᴍ ᴡɪɴᴅᴏᴡ: 60s`;
 
-  ctx.reply(message, {
+  ctx.editMessageText(message, {
     parse_mode: 'Markdown',
     reply_markup: {
       inline_keyboard: [
-        [{ text: '🏠 Back Home', callback_data: 'action_home' }]
+        [{ text: '🏠 ʙᴀᴄᴋ ʜᴏᴍᴇ', callback_data: 'action_home' }]
       ]
     }
-  });
+  }).catch(() => {});
 });
 
 bot.action('action_home', async (ctx) => {
@@ -201,27 +198,30 @@ bot.action('action_home', async (ctx) => {
   const { getOrCreateUser } = require('./services/userService');
   const user = await getOrCreateUser(ctx);
   const message = 
-    `🎮 **GACHA BOT**\n\n` +
-    `👤 **Your Profile**\n` +
-    `💰 Coins: **${user.coins}**\n` +
-    `📦 Characters: **${user.inventory.length}**\n\n` +
-    `🎯 **Features**\n` +
-    `🎴 Collect rare waifus and characters\n` +
-    `💎 Build your own anime harem\n` +
-    `🎲 80% claim success rate\n\n` +
-    `⚡ Tap a button below to start!`;
+    `╭────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼ ⏤͟͞‌‌‌‌★\n` +
+    `┊◍ ʜᴇʏ : ${ctx.from.first_name} 🦋 !\n` +
+    `┆◍ ɪ ᴀᴍ : Gᴀᴄʜᴀ Bᴏᴛ !\n` +
+    `┴─────────────────────────•\n\n` +
+    `❖ ᴄᴏʟʟᴇᴄᴛ ʏᴏᴜʀ ғᴀᴠ ᴄʜᴀʀᴀᴄᴛᴇʀs!\n` +
+    `❖ ʙᴜɪʟᴅ ʏᴏᴜʀ ᴏᴡɴ ᴀɴɪᴍᴇ ʜᴀʀᴇᴍ!\n` +
+    `❖ ғɪɴᴅ ᴀɴᴅ ᴄᴏʟʟᴇᴄᴛ ʀᴀʀᴇ ᴄʜᴀʀᴀᴄᴛᴇʀs!\n` +
+    `•───────────────────────────•\n\n` +
+    `👤 **ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ**\n` +
+    `💰 ᴄᴏɪɴs: **${user.coins}**\n` +
+    `📦 ᴄʜᴀʀᴀᴄᴛᴇʀs: **${user.inventory.length}**\n` +
+    `•───────────────────────────•`;
 
   ctx.editMessageText(message, {
     parse_mode: 'Markdown',
     reply_markup: {
       inline_keyboard: [
         [
-          { text: '🎴 PULL NOW', callback_data: 'action_pull' },
-          { text: '📦 INVENTORY', callback_data: 'action_inventory' }
+          { text: '🎴 ᴘᴜʟʟ', callback_data: 'action_pull' },
+          { text: '📦 ɪɴᴠᴇɴᴛᴏʀʏ', callback_data: 'action_inventory' }
         ],
         [
-          { text: '❓ HELP', callback_data: 'action_help' },
-          { text: '💡 INFO', callback_data: 'action_info' }
+          { text: '❓ ʜᴇʟᴘ', callback_data: 'action_help' },
+          { text: '💡 ɪɴғᴏ', callback_data: 'action_info' }
         ]
       ]
     }
