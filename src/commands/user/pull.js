@@ -52,6 +52,14 @@ module.exports = (bot, activePulls) => {
           }
         }
       );
+
+      // Send photo if available
+      if (char.imageUrl) {
+        ctx.replyWithPhoto(char.imageUrl, {
+          caption: `**${char.name}** — ${char.rarity.toUpperCase()}`,
+          parse_mode: 'Markdown'
+        }).catch(() => {});
+      }
     } catch (err) {
       console.error('Pull error:', err);
       ctx.reply('❌ Error during pull. Try again.');
